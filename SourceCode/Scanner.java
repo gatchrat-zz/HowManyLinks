@@ -8,23 +8,24 @@ import org.jsoup.select.*;
 public class Scanner {
 	static Document dok;
 	static List urls;
-	static List newurls;
 	/**
 	 * The Url to start the Search from
 	 * I.E http://www.zombfort.de/ 
 	 */
 	public static String startURL; 
+	public static int maxTime;
+	public static int maxURLsScanned;
 	public static void main(String[] args){
 		
 		
 	}
-	public static void StartScan(){
+	public static void Scan(){
 		urls = new LinkedList();
 		//get links from start URL
 		fetchDoc(startURL);
 		extractLinks(dok);
 		//get links from each of the extracted URL
-		for(int i = 0;i<30;i++){
+		for(int i = 0;i<maxURLsScanned;i++){
 		
 			fetchDoc("https://"+urls.get(i).toString());
 			extractLinks(dok);
@@ -32,10 +33,7 @@ public class Scanner {
 				i=99;
 			}
 		}
-		System.out.println(""+urls.size());
-		for(int i = 0;i <urls.size();i++){
-				System.out.println(urls.get(i).toString());
-		}
+		
 	}
 
 	/**
