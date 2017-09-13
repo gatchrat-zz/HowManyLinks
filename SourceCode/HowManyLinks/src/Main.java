@@ -9,9 +9,10 @@ public class Main {
 	static Document dok;
 	static List urls;
 	static List newurls;
+	public static String startURL; //I.E http://www.zombfort.de/
 	public static void main(String[] args){
 		urls = new LinkedList();
-		fetchDoc("http://www.zombfort.de/");
+		fetchDoc(startURL);
 		extractLinks(dok);
 		for(int i = 0;i<30;i++){
 		
