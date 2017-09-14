@@ -5,7 +5,7 @@ import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.parser.*;
 import org.jsoup.select.*;
-public class Scanner {
+public class URLScanner {
 	static Document dok;
 	static List urls;
 	/**
@@ -30,7 +30,7 @@ public class Scanner {
 			fetchDoc("https://"+urls.get(i).toString());
 			extractLinks(dok);
 			if(i==urls.size()-1){
-				i=99;
+				i=maxURLsScanned;
 			}
 		}
 		
