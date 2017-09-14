@@ -19,5 +19,13 @@ public class Main {
 		for(int i = 0;i <URLScanner.urls.size();i++){
 				System.out.println(URLScanner.urls.get(i).toString());
 		}
+		System.out.println("Would you like to save the found links in a .txt file ? (Y/N)");
+		String a = sc.nextLine();
+		if (a.compareTo("Y") == 0){
+			FileCreator.SaveURList();
+		}
+		else{
+			//System.out.println("Do you want to start another Scan ? (Y/N)");
+		}
 	}
 }
